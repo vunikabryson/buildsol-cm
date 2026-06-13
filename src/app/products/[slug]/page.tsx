@@ -101,9 +101,11 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </div>
 
           <div className="flex items-baseline gap-3 mb-6">
-            <span className="text-3xl font-bold text-stone-900">{formatPrice(product.price)}</span>
+     <span className="text-3xl font-bold text-stone-900">
+  {formatPrice(Number(product.price))}
+</span>
             {product.comparePrice && (
-              <span className="text-lg text-stone-400 line-through">{formatPrice(product.comparePrice)}</span>
+              <span className="text-lg text-stone-400 line-through">{formatPrice(Number(product.comparePrice))}</span>
             )}
             {product.unit && product.unit !== 'each' && (
               <span className="text-sm text-stone-500">per {product.unit}</span>
